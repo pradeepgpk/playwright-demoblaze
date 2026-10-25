@@ -8,4 +8,4 @@ node_modules/
 /playwright/.auth/
 
 # Credentials
-testData/loginData.json
+# testData/loginData.json
