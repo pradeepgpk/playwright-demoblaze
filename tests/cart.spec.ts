@@ -11,24 +11,17 @@ for (const { productName } of productList) {
         await homePage.goto()
         await homePage.openProduct(productName)
         await productPage.addToCart()
-
         await cartPage.goto()
         await expect(cartPage.productRows(productName).first()).toBeVisible()
     })
 }
 
 for (const { productName } of deleteList) {
-    test(`Delete ${productName} from cart`, async ({ homePage, productPage, cartPage }) => {
-        // add it first so this test can run on its own
-        await homePage.goto()
-        await homePage.openProduct(productName)
-        await productPage.addToCart()
-
+    test(`Delete ${productName} from cart`, async ({ cartPage }) => {
         await cartPage.goto()
         const rows = cartPage.productRows(productName)
         await expect(rows.first()).toBeVisible()
         const countBefore = await rows.count()
-
         await cartPage.deleteProduct(productName)
         await expect(rows).toHaveCount(countBefore - 1)
     })

@@ -11,7 +11,7 @@ export default defineConfig({
   use: {
     baseURL: process.env.DEMOBLAZE_URL ?? 'https://www.demoblaze.com/',
     trace: 'on-first-retry',
-    screenshot: 'on',
+    screenshot: 'only-on-failure',
   },
   projects: [
     { name: 'setup', testMatch: /.*\.setup\.ts/ },
