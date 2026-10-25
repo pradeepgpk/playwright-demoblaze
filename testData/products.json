@@ -1,0 +1,15 @@
+{
+    "productList": [
+        {
+            "productName": "Samsung galaxy s6"
+        },
+        {
+            "productName": "Nokia lumia 1520"
+        }
+    ],
+    "deleteList": [
+        {
+            "productName": "Nokia lumia 1520"
+        }
+    ]
+}
